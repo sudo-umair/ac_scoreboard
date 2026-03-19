@@ -54,7 +54,7 @@ local function openScoreboard()
 
     SetNuiFocus(true, true)
     SetNuiFocusKeepInput(true)
-    SetCursorLocation(Config.settings.side == 'right' and 0.8 or 0.2, 0.5)
+    SetCursorLocation(0.5, 0.5)
 
     SendNUIMessage({
         action = 'setVisible',
@@ -67,6 +67,16 @@ local function openScoreboard()
         DisableControlAction(0, 1, true) -- INPUT_LOOK_LR
         DisableControlAction(0, 2, true) -- INPUT_LOOK_UD
         DisableControlAction(0, 200, true) -- INPUT_FRONTEND_PAUSE_ALTERNATE
+        DisableControlAction(0, 194, true) -- INPUT_FRONTEND_DELETE (Backspace)
+
+        if IsDisabledControlJustPressed(0, 200) or IsDisabledControlJustPressed(0, 194) then
+            isOpened = false
+            SendNUIMessage({
+                action = 'setVisible',
+                data = false,
+            })
+        end
+
         Wait(0)
     end
 

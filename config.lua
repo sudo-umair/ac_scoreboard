@@ -5,8 +5,8 @@
 return {
     settings = {
         title = {
-            text = 'AC Scoreboard',
-            logo = 'https://cfx-nui-ac_scoreboard/web/build/logo.svg',
+            text = 'Royal City',
+            logo = 'https://cfx-nui-ac_scoreboard/web/build/assets/logo.png',
         },
 
         side = 'right',
@@ -25,9 +25,9 @@ return {
 
         compactGroups = false,
 
-        playerColumns = 1,
+        playerColumns = 2,
 
-        groupColumns = 1,
+        groupColumns = 2,
     },
 
     visibleSections = {
@@ -44,7 +44,7 @@ return {
     commandName = 'scoreboard',
 
     -- Default keybind for the '/scoreboard' command
-    commandKey = 'DELETE',
+    commandKey = 'F10',
 
     -- Whether to include off-duty players in group count (if not defined in the group row itself)
     includeOffDuty = false,

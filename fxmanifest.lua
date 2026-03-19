@@ -10,7 +10,8 @@ description 'A framework-standalone scoreboard UI for FiveM.'
 repository 'https://github.com/acscripts/ac_scoreboard'
 
 
-shared_script '@ox_lib/init.lua'
+shared_script {'@ox_lib/init.lua',}
+
 server_script 'resource/server.lua'
 client_script 'resource/client.lua'
 
